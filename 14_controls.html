@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>6_controls.html</h1> 
+  <script>
+    // 조건에 따른 반복 2. while
+    // usage:
+    // while (조건식) {
+    //   조건식이참일때수행할코드
+    //   조건식이참일때수행할코드
+    // }
+
+    var cnt = 0;
+    while (cnt < 3) {
+      console.log("hello");
+      ++cnt;
+    }
+
+    // while 루프는 주로 반복의 횟수가 명확하지 않은 경우에 사용합니다.
+    
+    // 1. break: 반복을 그 즉시 중단하게 반복을 빠져나가는 키워드
+    cnt = 0;
+    while (true) {
+      // 먼저 종료 조건을 검사하는 것이 좋습니다.
+      if (cnt >= 3) {
+        break;
+      }
+      
+      console.log("hello");
+      ++cnt;
+    }
+
+    // 2. continue: 반복을 즉시 중단하고 그 다음 반복을 수행하는 키워드
+    for (var i = 1; i < 11; i++) {
+      if ((i % 2) == 0) {
+        console.log(i);
+      }
+    }
+
+    for (var i = 1; i < 11; i++) {
+      if ((i % 2) != 0) { // 홀수
+        continue;
+      }
+      console.log(i);
+    }
+
+    // 연습문제: 숫자 알아맞히게 게임을 만들어 보세요.
+
+    // 0 * 100 <= Math.random() * 100 < 1 * 100
+    // 0 + 1 <= Math.random() * 100 + 1 < 100 + 1
+    // Math.floor(1) <= Math.floor(Math.random() * 100 + 1) < Math.floor(101)
+
+    // 1~100 사이의 정수형 난수를 발생하는 코드입니다.
+    console.log(Math.floor(Math.random() * 100 + 1));
+
+    // 숫자 알아맞히게 게임을 시작합니다. 1부터 100 사이의
+    // 값을 입력해 주세요.
+    // 입력(1~100): 50
+    // 50보다는 큽니다.
+    // 입력(1~100): 75
+    // 75보다는 작습니다.
+    // 입력(1~100):72 
+    // 정답입니다. 3번만에 맞추셨습니다.
+    console.log("숫자 알아맞히기 게임을 시작합니다.");
+    console.log("1부터 100사이의 값을 입력해 주세요.")
+
+    var answer = Math.floor(Math.random() * 100 + 1);
+
+    var cnt = 0;
+    while (true) {
+      var num = Number(window.prompt("1~100 사이의 값 입력:"));
+      ++cnt;
+
+      if (num > answer) {
+        console.log(`${num}보다는 작습니다.`);
+      }
+      else if (num < answer) {
+        console.log(`${num}보다는 큽니다.`);
+      }
+      else {
+        console.log(`정답입니다. ${cnt}번만에 맞추셨습니다.`);
+        break;
+      }
+    }
+
+    // 자바스크립트에서 do ~ while도 제공합니다.
+    
+  </script>
+</body>
+</html>

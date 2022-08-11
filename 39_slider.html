@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <!-- bxslider.com에서 복사한 내용을 head 태그 안에
+       붙여넣으세요. -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+</head>
+<body>
+  <div class="bxslider">
+    <div><img src="1.jpg" title="꽃사진1"></div>
+    <div><img src="2.jpg" title="꽃사진2"></div>
+    <div><img src="3.jpg" title="꽃사진3"></div>
+  </div>
+
+  <script>
+    $(".bxslider").bxSlider({
+      // mode: "fade",
+      slideWidth: 400,
+      captions: true
+    });
+  </script>
+</body>
+</html>

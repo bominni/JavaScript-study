@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>3_function.html</h1>  
+  <script>
+    // 자바스크립트에서는 함수를 2가지 형태로 생성할 수 있습니다.
+    // 1. 함수 정의
+    function foo() {
+      console.log("foo()");
+    }
+    foo();
+
+    // 2. 익명 함수를 사용
+    const bar = function() {
+      console.log("bar()");
+    }
+    bar();
+
+    // -----------------------------------------------------------
+    // 함수 생성 시, 정의보다는 익명 함수를 사용하는 것이 좋습니다.
+    // 함수를 정의하여 생성하게 되면 호이스팅이 발생하기 때문입니다.
+    goo();  // OK
+    function goo() {
+      console.log("goo()");
+    }
+
+    // -----------------------------------------------------------
+    // 화살표 함수
+    // usage: const 함수명 = ([매개변수[,매개변수...]]) => {
+    //   함수코드
+    //   함수코드
+    // };
+    const hoo = function() {
+      console.log("hoo()");
+    }
+    hoo();
+
+    const zoo = () => {
+      console.log("zoo()");
+    }
+    zoo();
+
+    // -------------------------------------------------------
+    // 화살표 함수의 다양한 표현 방법
+    const a = () => {
+      console.log("a");
+    };
+    a();
+
+    // 1. 함수 코드가 한 줄인 경우, 한 줄 블럭을 사용할 수 있습니다.
+    const b = () => { console.log("b"); };
+    b();
+
+    // 2. 함수 코드가 한 줄인 경우, 블럭을 생략할 수 있습니다.
+    const c = () => console.log("c"); 
+    c();
+
+    // 3. 함수가 값만 반환한다면 블럭과 return 키워드를 생략할 수 있습니다.
+    const pi = () => 3.141592; 
+    console.log(pi());
+
+    // 4. 필요하다면 여러 줄을 사용할 수 있으며, 이 경우 중괄호를
+    // 생략할 수 없습니다.
+    const d = () => {
+      console.log("hello");
+    };
+
+    // 5. 여러 줄인 경우, return 키워드를 생략할 수 없습니다.
+    const area = (r) => {
+      const result = r ** 2 * pi();
+      return result;
+    }
+    console.log(area(2));
+
+    // 6. 매개변수가 없는 경우, 소괄호를 생략할 수 없습니다.
+    const hello = () => console.log("hello");
+
+    // 7. 매개변수가 1개인 경우, 소괄호를 생략할 수 있습니다.
+    const square = x => x ** 2;
+    console.log(square(2));
+
+    // 8. 매개변수가 2개 이상인 경우, 소괄호를 생략할 수 없습니다.
+    const add = (x, y) => x + y;
+    console.log(add(1,1));
+
+    // 소괄호는 생략할 수 없느나 예외적으로 매개변수가 1개인 경우에는
+    // 생략할 수 있습니다.
+
+  </script>
+</body>
+</html>

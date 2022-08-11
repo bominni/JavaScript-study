@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>4_controls.html</h1> 
+  <script>
+    // 삼항 연산자
+    var num = 0;
+    var result = num === 0 ? "zero" : "not zero";
+    console.log(result);
+
+    // 단축 평가가 수행됩니다.
+    // &&연산자에서 앞의 피연산자가 거짓이면 뒤의 표현식은
+    // 평가되지 않습니다.
+    // ||연산자에서 앞의 피연산자가 참이면 뒤의 표현식은
+    // 평가되지 않습니다.
+    if (true || console.log("hello")) {
+      // do something...
+    }
+
+    // ---------------------------------------------
+    // 값에 의한 분기: switch
+    var color = "red";
+    if (color === "red") {
+      console.log("빨간색");
+    }
+    else if (color === "green") {
+      console.log("녹색");
+    }
+    else if (color === "blue") {
+      console.log("파란색");
+    }
+    else {
+      console.log("잘못 입력");
+    }
+    
+    // 위의 코드는 로직에 비해 코드가 매우 장황하다는 단점이 있습니다.
+    // 이를 해결하기 위해 자바스크립트는 값에 의한 분기를 수행할
+    // 수 있도록 switch를 제공합니다.
+    var color = "red";
+    switch (color) {
+      case "red":
+        console.log("빨간색");
+        break;
+      case "green":
+        console.log("녹색");
+        break;
+      case "blue":
+        console.log("파란색");
+        break;
+      default:
+        console.log("잘못 입력");
+    }
+
+    // fall-through: switch의 각 case에서 break를 사용하지 않을 때
+    // 다음 case가 수행되는 기능 -> switch에서도 if를 흉내내기 위해
+    // 제공됨 -> 가급적 사용하지 않는 것이 좋음
+
+
+  </script>
+</body>
+</html>

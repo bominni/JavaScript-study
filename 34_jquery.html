@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+</head>
+<body>
+  <!-- 
+  <div id="box">
+    <h3>h3입니다.</h3>
+  </div>
+  <p>이름: <input type="text" id="uname" value="daniel"></p>
+  <a id="naver" href="https://www.naver.com">네이버로이동</a>
+  <script>
+    // 텍스트 가져오기
+    console.log($("#box").text());
+
+    // HTML 가져오기
+    console.log($("#box").html());
+
+    // 폼 객체의 값 가져오기
+    console.log($("#uname").val());
+
+    // 속성 가져오기 
+    console.log($("#naver").attr("href"));
+  </script> -->
+
+  <h3 id="h1"></h3>
+  <h3 id="h2"></h3>
+  <h3 id="h3"></h3>
+  <p>이름: <input type="text" id="uname"></p>
+  <img id="img">
+
+  <script>
+    // 텍스트 설정하기
+    $("#h1").text("hello, world");
+    $("#h2").text("<a href='https://www.naver.com'>네이버</a>");
+
+    // HTML 설정하기
+    $("#h3").html("<a href='https://www.naver.com'>네이버</a>");
+
+    // 폼 객체 값 설정하기
+    $("#uname").val("daniel");
+
+    // 속성 설정하기
+    $("#img").attr("src", "http://placedog.net/300/200");
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>5_controls.html</h1> 
+  <script>
+    //
+    // 반복문: 특정 코드를 반복하는 문법
+    //
+    
+    // case 1. 조건에 따른 반복
+    // for (초기식; 조건식; 증감식) {
+    //   반복할 코드
+    // }
+    for (var i = 0; i < 5; i++) {
+      console.log("hello, world");
+    }
+
+    // 연습 문제: 사용자로부터 구구 단을 입력받아
+    // 해당 단을 출력하는 코드를 구현해 보세요. 이 때, 입력은
+    // 2~9값만 입력된다고 가정합니다.
+
+    // ex)
+    // 구구단 입력(2~9): 2
+    // 2 x 1 = 2
+    // 2 x 2 = 4
+    // ...
+    // 2 x 9 = 18
+
+    var dan = 2; // 입력을 받았다고 가정합니다.
+    for (var n = 1; n < 10; n++) {
+      console.log(`${dan} x ${n} = ${dan * n}`);
+    }
+
+    // 분기문과 마찬가지로 반복문 또한 중첩이 가능합니다.
+    for (var i = 0; i < 3; i++) {
+      for (var j = 0; j < 4; j++)
+        console.log("hello");
+    }
+
+    // 연습 문제: 아래의 코드를 실행하지 말고 그 결과를 예측해 보세요.
+    for (var i = 0; i < 3; i++) {
+      console.log(i)
+      for (var j = 0; j < 4; j++)
+        console.log("\t" + j);
+    }
+
+    // 연습 문제: 2단부터 9단까지 한번에 출력해 보세요
+    for (var dan = 2; dan < 10; dan++) {
+      console.log(`< ${dan}단 >`);
+      for (var n = 1; n < 10; n++) {
+        console.log(`${dan} x ${n} = ${dan * n}`);
+      }
+    }
+
+    // for (;;)
+
+  </script>
+</body>
+</html>

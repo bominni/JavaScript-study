@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>3_datatype.html</h1> 
+  <script>
+    // 1. 숫자형
+    // 2. 문자열: 문자가 연속되어 나열된 것
+    // 문자열 표현 방법: 동일 인용 부호를 쌍으로 사용해야 함
+    console.log("hello");
+    console.log('world');
+
+    // 큰 따옴표와 작은 따옴표의 차이는 없습니다.
+    // console.log("hello, "world""); // hello, "world"
+
+    // 서로 다른 인용 부호를 제공하는 이유는 문자열 안에
+    // 인용 부호를 포함하기 위해서 입니다.
+    // 작은 따옴표: 큰 따옴표를 포함하는 경우
+    console.log('hello, "world"');
+
+    // 큰 따옴표: 작은 따옴표를 포함하는 경우
+    console.log("hello, 'world'");
+
+    // 참고! 백슬래시(\)를 사용할 수 있습니다.
+    // 백슬래시 대신 원화를 입력하셔도 됩니다.
+    console.log("hello, \"world\"")
+
+    // 제어문자: 하드웨어를 제어하기 위한 문자
+    // 1. \n: newline의 약자로 개행을 수행합니다.
+    console.log("hello\nworld");
+
+    // 2. \t: tab의 약자로 다수의 공백을 삽입합니다.
+    console.log("hello, world\t!")
+
+    // 참고! template literals: 2015년에 도입된 새로운 문자열
+    // hello
+    // world
+    // goobye
+
+    // 백틱(`)을 사용하여 문자열을 표현하며 눈에 보이는 그대로
+    // 문자열을 저장할 때 사용합니다.
+    console.log(`---------
+  hello
+world
+-----------`);
+
+    // 문자열은 제한적으로 산술 연산자를 사용할 수 있습니다.
+    // 덧셈 연산자: 2개의 문자열을 연결(concatenation)합니다.
+    console.log("hello" + "world");
+  </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+</head>
+<body>
+  <!-- 1. 전체 선택자 
+  <h3>hello</h3>
+  <p>world</p>
+  <ul>
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+  </ul>
+  <script>
+    $("*").css("border", "solid 2px red")
+  </script> -->
+
+  <!-- 2. 태그 선택자
+  <h3>hello</h3>
+  <p>world</p>
+  <ul>
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+  </ul>
+  <script>
+    // 전체 선택자 *는 페이지의 모든 요소를 선택합니다.
+    $("li").css("color", "red");
+  </script>  -->
+
+  <!-- 3. 아이디 선택자
+  <h3>hello</h3>
+  <p id="para">world</p>
+  <ul>
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+  </ul>
+  <script>
+    // 아이디 선택자: #
+    $("#para").css("color", "red");
+  </script>  -->
+
+  <!-- 4. 클래스 선택자
+  <h3>hello</h3>
+  <p id="para">world</p>
+  <ul>
+    <li class="red">item1</li>
+    <li class="red">item2</li>
+    <li class="red">item3</li>
+  </ul>
+  <script>
+    // 클래스 선택자: .
+    $(".red").css("color", "red");
+  </script> -->
+
+  <!-- 4. 그룹 선택자 -->
+  <h3>hello</h3>
+  <p id="para">world</p>
+  <ul>
+    <li class="red">item1</li>
+    <li class="red">item2</li>
+    <li class="red">item3</li>
+  </ul>
+  <script>
+    // 그룹 선택자: 쉼표를 사용하여 태그를 나열
+    $("h3, p").css("color", "red");
+  </script> -->
+
+</body>
+</html>

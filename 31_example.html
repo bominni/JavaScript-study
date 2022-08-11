@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div class="container">
+    <textarea cols="30" rows="1" id="LCD"></textarea><br>
+
+    <button type="button" id="btn1" class="digit" value="1">1</button>
+    <button type="button" id="btn2" class="digit" value="2">2</button>
+    <button type="button" id="btn3" class="digit" value="3">3</button>
+    <button type="button" id="btnPlus" class="operator" value="+">+</button><br>
+
+    <button type="button" id="btn4" class="digit" value="4">4</button>
+    <button type="button" id="btn5" class="digit" value="5">5</button>
+    <button type="button" id="btn6" class="digit" value="6">6</button>
+    <button type="button" id="btnMinus" class="operator" value="-">-</button><br>
+
+    <button type="button" id="btn7" class="digit" value="7">7</button>
+    <button type="button" id="btn8" class="digit" value="8">8</button>
+    <button type="button" id="btn9" class="digit" value="9">9</button>
+    <button type="button" id="btnMultiply" class="operator" value="*">*</button><br>
+
+    <button type="button" id="btn0" class="digit" value="0">0</button>
+    <button type="button" id="btnClear">C</button>
+    <button type="button" id="btnCalc" value="=">=</button>
+    <button type="button" id="btnDivide" class="operator" value="/">/</button><br>
+  </div>
+
+  <script>
+    const LCD = document.querySelector("#LCD");
+    const buttons = document.querySelectorAll(".digit, .operator");
+    for (const btn of buttons) {
+      console.log(btn.value);
+      btn.addEventListener("click", function() {
+        LCD.value += btn.value;        
+      });
+    }
+
+    const calcBtn = document.querySelector("#btnCalc");
+    console.log(calcBtn.value);
+    calcBtn.addEventListener("click", function() {
+      const result = eval(LCD.value);
+      LCD.value = result + "";
+    });
+
+    const clearBtn = document.querySelector("#btnClear");
+    clearBtn.addEventListener("click", function() {
+      LCD.value = "";
+    });
+
+  </script>
+</body>
+</html>

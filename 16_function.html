@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>8_function.html</h1> 
+  <script>
+    // function send_message(message, from) {
+    //   if (from === undefined) {
+    //     from = "unknown";
+    //   }
+    //   console.log(`${message} from ${from}`);
+    // }
+
+    // 기본 매개변수(default parameter): 함수 호출 시,
+    // 매개변수로 값이 전달되지 않으면 기본 값을 사용하는 문법
+    function send_message(message, from="unknown") {
+      console.log(`${message} from ${from}`);
+    }
+
+    send_message("hello", "daniel");
+    send_message("hello");
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+  <!-- 이벤트 처리 방법 1. 기본 모델
+  <h1 style="background-color:yellow">클릭하세요.</h1> 
+  <script>
+    const h1 = document.querySelectorAll("h1")[0];
+
+    // usage: 객체.이벤트속성 = 핸들러();
+    h1.onclick = function() { console.log("clicked!"); }
+
+    // 위와 같은 방식은 예전부터 사용해오던 전통적인 방식으로
+    // 모든 브라우저가 지원하므로 호환성이 좋습니다.
+  </script> -->
+
+  <!-- 이벤트 처리 방법 2. 인라인 모델 
+  <h1 style="background-color:yellow"
+      onclick="console.log('clicked');">클릭하세요.</h1> -->
+
+  <!-- 이벤트 처리 방법 3. 리스너 모델
+  <h1 style="background-color:yellow">클릭하세요.</h1> 
+  <script>
+    const h1 = document.querySelectorAll("h1")[0];
+
+    // 리스너를 등록합니다.
+    h1.addEventListener("click", function() {
+      console.log("clicked1!");
+    });
+
+    // 동일 이벤트의 리스너를 중복 등록할 수 있습니다.
+    h1.addEventListener("click", function() {
+      console.log("clicked2!");
+    });
+    
+    // 리스너 모델의 장점은 하나의 이벤트에 대하여 여러 리스너(핸들러)를
+    // 등록할 수 있다는 것입니다. 그리고 등록된 리스너를 삭제할 수도
+    // 있습니다.
+  </script> -->
+
+  <!-- 리스너 삭제하기
+  <h1 style="background-color:yellow">클릭하세요.</h1> 
+  <script>
+    const h1 = document.querySelectorAll("h1")[0];
+
+    // 리스너를 생성합니다.
+    const listener = function() {
+      console.log("clicked!");
+
+      // 등록된 리스너를 삭제합니다.
+      h1.removeEventListener("click", listener);
+    }
+
+    // 리스너를 등록합니다.
+    h1.addEventListener("click", listener);
+  </script> -->
+
+  <h1>hello, world</h1>
+  <script>
+    const h1 = document.querySelectorAll("h1")[0];
+
+    let count = 0;
+    const listener = function() {
+      ++count;
+      if (count > 4) {
+        h1.removeEventListener("click", listener);
+      }
+      console.log("clicked");
+    }
+    h1.addEventListener("click", listener);
+  </script>
+  
+</body>
+</html>

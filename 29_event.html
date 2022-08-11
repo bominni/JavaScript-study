@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+  <!--
+  <h1 style="background-color:yellow;">클릭하세요.</h1>
+  <script>
+    const h1 = document.querySelectorAll("h1")[0];
+
+    // 마우스 클릭 이벤트는 2단계로 이루어집니다.
+    h1.addEventListener("mousedown", function() { // 눌렸을 때
+      console.log("mousedown");
+    });
+
+    h1.addEventListener("mouseup", function() { // 떼어졌을 때
+      console.log("mouseup");
+    });
+
+    // 마우스가 해당 태그에 진입했을 때도 이벤트가 발생합니다.
+    h1.addEventListener("mouseenter", function() {
+      console.log("mouseenter");
+    });
+
+    // 마우스가 해당 태그로부터 벗어났을 때도 이벤트가 발생합니다.
+    h1.addEventListener("mouseleave", function() {
+      console.log("mouseleave");
+    }); -->
+
+  <!-- 마우스 이벤트 정보 가져오기
+  <h1 style="background-color:yellow;"
+      oncontextmenu="event.preventDefault();">클릭하세요.</h1>
+  <script>
+    const h1 = document.querySelectorAll("h1")[0];
+    
+    // 버튼 정보 가져오기
+    // 이벤트 발생 시, 콜백 함수로 이벤트 객체가 전달됩니다.
+    h1.addEventListener("mouseup", function(event) {
+      switch (event.button) {
+        case 0: console.log("left button clicked!"); break;
+        case 1: console.log("middle button clicked!"); break;
+        case 2: console.log("right button clicked!"); break;
+        default: console.log("unknown button code");
+      }
+    });
+  </script> -->
+
+  <!-- 마우스 좌표 정보 출력하기 -->
+  <h1 style="background-color:yellow;"
+      oncontextmenu="event.preventDefault();">클릭하세요.</h1>
+  <script>
+    const h1 = document.querySelectorAll("h1")[0];
+
+    h1.addEventListener("mousedown", function(event) {
+      console.log(`x: ${event.clientX}, y: ${event.clientY}`);
+    });
+
+    // 마우스 드래그 이벤트 
+    h1.addEventListener("mousemove", function(event) {
+      console.log(`x: ${event.clientX}, y: ${event.clientY}`);
+    });
+
+    h1.addEventListener("mouseup", function(event) {
+      console.log(`x: ${event.clientX}, y: ${event.clientY}`);
+    });
+  </script>
+</body>
+</html>
+
+
+
+

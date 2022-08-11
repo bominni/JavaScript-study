@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <style>
+    .red { color: red; }
+    .blue { color: blue; }
+  </style>
+</head>
+<body>
+  <!-- 버튼 이벤트 처리
+  <button type="button" id="btn">Click</button>
+  <script>
+    $("#btn").click(function() { console.log("hello, world") });
+  </script> -->
+
+  <!-- 요소의 추가 
+  <div id="box">   </div>
+  <button type="button" id="btn">요소 추가</button>
+  <script>
+    $("#btn").click(function() {
+      $("#box").append("<h3>안녕하세요</h3>");
+    });
+  </script> -->
+
+  <!-- 선택된 요소의 제일 앞에 추가
+  <ul id="list">
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+  </ul>
+  <button type="button" id="btn">요소 추가</button>
+
+  <script>
+    $("#btn").click(function() {
+      $("#list").prepend("<li style='color:red'>hello, world</li>")
+    });
+  </script> -->
+
+  <!-- 선택된 요소의 바로 앞과 뒤에 삽입
+  <h3 id="header">hello, world</h3>
+  <button type="button" id="btn1">앞에 삽입하기</button>
+  <button type="button" id="btn2">뒤에 삽입하기</button>
+
+  <script>
+    $("#btn1").click(function() {
+      $("#header").before("<h3 style='color:red')>hi, there</h3>");
+    });
+
+    $("#btn2").click(function() {
+      $("#header").after("<h3 style='color:blue')>goodbye, friend</h3>");
+    });
+  </script> -->
+
+  <!-- 요소 삭제하기
+  <div id="box">
+    <h3>hello, world</h3>
+    <h3>goodbye, friend</h3>
+  </div>
+  <button type="button" id="btn">삭제하기</button>
+
+  <script>
+    $("#btn").click(function() {
+      $("#box").remove();
+    });
+  </script> -->
+
+  <!-- 클래스 속성 추가하기
+  <h3>제목 1</h3>
+  <p>문단 1</p>
+  <h3>제목 2</h3>
+  <p>문단 2</p>
+  <button type="button" id="btn1">red 클래스 더하기</button>
+  <button type="button" id="btn2">blue 클래스 더하기</button>
+  <button type="button" id="btn3">red 클래스 빼기</button>
+
+  <script>
+    $("#btn1").click(function() {
+      $("h3").addClass("red");
+    });
+
+    $("#btn2").click(function() {
+      $("p").addClass("blue");
+    });
+
+    $("#btn3").click(function() {
+      $("h3").removeClass("red");
+    });
+  </script> -->
+
+
+  <!-- 연습문제 1.
+
+  <div id="div1"> </div> 
+  <div><input type="text" id="email"></div> 
+
+  <script>
+    $("#div1").text("안녕하세요.");
+    $("#email").val("hello@world.com");
+  </script> -->
+
+  <!-- 연습문제 2. -->
+  <h2 id="title1">제목 1</h2> 
+  <h2 id="title2">제목 2</h2> 
+
+  <script>
+    $("#title1").css("color", "red");
+    $("#title2").css("background", "yellow");
+  </script>
+
+</body>
+</html>

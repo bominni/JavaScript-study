@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>1_object.html</h1>
+
+  <!-- HTML 요소를 동적으로 추가해 봅니다. -->
+  <script>
+    document.body.innerHTML += "<h1>hello, world</h1>";
+  </script>
+
+  <!-- 텍스트의 스타일을 변경합니다. -->
+  <h2>goodbye, friend</h2>
+  <script>
+    const h2 = document.getElementsByTagName("h2")[0];
+
+    // 텍스트의 내용을 변경합니다.
+    h2.textContent = "goodbye, buddy";
+    h2.style.color = "red";
+    h2.style.backgroundColor = "black";
+  </script>
+
+  <!-- 태그의 속성을 변경합니다. -->
+  <img>
+  <script>
+    const img = document.getElementsByTagName("img")[0];
+
+    // 속성 설정하기
+    // img.setAttribute("src", "http://placedog.net/400/300");
+    img.src = "http://placedog.net/400/300";
+
+    // 속성 확인하기
+    // console.log(img.getAttribute("src"));
+    console.log(img.src);
+    
+    // HTML5 표준에서 제공하는 속성은 .을 사용하여 접근할 수 있습니다.
+    // 표준에서 제공하지 않는 속성을 처리할 때는 setAttribute,
+    // getAttribute를 사용하시면 됩니다.
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+</head>
+<body>
+  <!-- 1. 마우스 이벤트 
+  <button id="btn1">클릭</button>
+  <button id="btn2">더블클릭</button>
+  <h3 id="display"></h3>
+
+  <script>
+    $("#btn1").click(function(event) {
+      // $("#display").text("클릭");
+      $("#display").text(`x: ${event.clientX}, y: ${event.clientY}`);
+    })
+
+    $("#btn2").dblclick(function() {
+      $("#display").text("더블클릭");
+    })
+  </script> -->
+
+  <!-- 2. 마우스 이벤트  
+  <h1 id="header" style="background-color:yellow">마우스를 올려보세요.</h1>
+  <h1 id="display"></h1>
+
+  <script>
+    $("#header").mouseenter(function() {
+      $("#display").text("마우스 진입");
+    });
+
+    $("#header").mouseleave(function() {
+      $("#display").text("마우스 벗어남");
+    });
+  </script> -->
+
+  <!-- 키보드 이벤트
+  아이디: <input type="text" id="id">
+  비밀번호: <input type="password" id="passwd">
+  <h1 id="show"></h1>
+
+  <script>
+    $("#id").keydown(function(event) {
+      $("#show").text(`keydown: ${event.key}`);
+    });
+
+    $("#id").keyup(function() { 
+      $("#show").text("keyup");
+    });
+
+    $("#passwd").keypress(function() {
+      $("#show").text("keypress");
+    });
+  </script> -->
+
+  <!-- 다수의 이벤트 처리: on -->
+  <h3 style="border: solid 1px black;">hello, world</h3>
+  <script>
+    $("h3").on({
+      click: function() { console.log("clicked!") },
+      dblclick: function() { console.log("double clicked!") },
+      mouseenter: function() { console.log("mouseenter!")},
+      mouseleave: function() { console.log("mouseleave!")}
+    });
+
+    // 등록된 이벤트를 제거하는 방법: off
+    // usage: $(선택자).off("click")
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+  <!--  1. 태그 이름으로 찾기
+  <p>문단1</p>
+  <p>문단2</p>
+  <div>
+    <p>문단3</p>
+    <p>문단4</p>
+  </div>
+  <script>
+    // 현재 문서에서 이름이 p인 태그를 찾기
+    const pTags = document.getElementsByTagName("p");
+    for (const p of pTags) {
+      console.log(p.textContent);
+    }
+  </script>
+  -->
+
+  <!-- 2. 이름 속성으로 찾기
+  <p name="para">문단1</p>
+  <p>문단2</p>
+  <p name="para">문단3</p>
+  <p>문단4</p>
+  <script>
+    const tags = document.getElementsByName("para");
+    for (const tag of tags) {
+      console.log(tag.textContent);
+    }
+  </script>
+  -->
+
+  <!-- 3. 클래스로 찾기
+  <p>문단1</p>
+  <p>문단2</p>
+  <p class="para">문단3</p>
+  <p class="para">문단4</p>
+  <script>
+    // 현재 문서에서 클래스 값이 para인 태그를 찾기
+    const tags = document.getElementsByClassName("para");
+    for (const tag of tags) {
+      console.log(tag.textContent);
+    }
+  </script>
+  -->
+
+  <!-- 4. 아이디로 찾기
+  <p id="para1">문단1</p>
+  <p id="para2">문단2</p>
+  <p>문단3</p>
+  <p>문단4</p>
+  <script>
+    // 현재 문서에서 클래스 값이 para인 태그를 찾기
+    const tag = document.getElementById("para1");
+    console.log(tag.textContent);
+  </script>
+  -->
+
+  <!-- 5. 선택자(CSS Selector)로 찾기 -->
+  <div class="example">
+    <h1 class="example">제목입니다.</h1>
+    <p>문단1</p>
+    <p>문단2</p>
+    <p class="example">문단3</p>
+    <p class="example">문단4</p>
+  </div>
+  <hr>
+  <div class="example">
+    <h1 class="computer">컴퓨터 서적</h1>
+    <ul class="books">
+      <li>C Programming</li>
+      <li>Java Programming</li>
+      <li>Python Programming</li>
+      <li>Javascript Programming</li>
+    </ul>
+  </div>
+  <script>
+    // const tags = document.querySelectorAll("p.example");
+    // console.log(tags);
+    // for (const tag of tags) {
+    //   console.log(tag.textContent);
+    // }
+
+    const tags = document.querySelectorAll("div.example > h1.computer");
+    console.log(tags[0].textContent);
+  </script>
+
+  
+
+</body>
+</html>

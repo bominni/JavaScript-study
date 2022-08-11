@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>3_controls.html</h1> 
+  <script>
+    // 
+    // 제어문
+    //
+
+    // 1. 조건에 따른 분기: if
+    // usage:
+    // if (조건식) {
+    //   조건식이참일때수행할코드
+    //   조건식이참일때수행할코드
+    // }
+
+    // var num = Number(window.prompt("숫자 입력"));
+    var num = 10;
+    if (num === 0) {
+      console.log("zero!");
+    }
+
+    if (num !== 0) {
+      console.log("not zero!");
+    }
+
+    // 위 코드는 경우에 따라 불필요한 연산이 발생할 수 있습니다.
+    // 이를 해결하기 위해 if ~ else를 제공합니다.
+    num = 0;
+    if (num === 0) {
+      console.log("zero!");
+    }
+    else {
+      console.log("not zero!");
+    }
+    
+    // 0인지 양수인지 음수인지를 판별하는 코드를 생각해 봅시다.
+    num = 0;
+    if (num === 0) {
+      console.log("zero!");
+    }
+    else {
+      // 분기문을 중첩할 수 있습니다.
+      if (num > 0)
+        console.log("positive!");
+      else // if (num < 0)
+        console.log("negative!");
+    }
+
+    // 이전의 코드는 중첩으로 인해 가독성이 떨어진다는
+    // 단점이 있습니다. 이를 해결하기 위해 자바스크립트는
+    // else if를 제공합니다.
+    num = 0;
+    if (num > 0) {
+      console.log("positive!");
+    }
+    else if (num < 0) {
+        console.log("negative!");
+    }
+    else {
+      console.log("zero!");
+    }
+
+    // 연습 문제: 사용자로부터 점수를 입력 받아
+    // 등급을 출력하는 프로그램을 구현해 보세요.
+    // 90점 이상: A
+    // 80점 이상: B
+    // 70점 이상: C
+    // 60점 이상: D
+    // 나머지: F
+
+    // 점수의 유효 범위는 0~100이고 잘못 입력할 경우,
+    // 오류 메시지를 출력해 보세요 :D
+    var score = 50;
+    if (score > 100) { console.log("잘못 입력하셨습니다."); }
+    else if (score < 0) { console.log("잘못 입력하셨습니다."); }
+    else if (score >= 90) { console.log("A"); }
+    else if (score >= 80) { console.log("B"); }
+    else if (score >= 70) { console.log("C"); }
+    else if (score >= 60) { console.log("D"); }
+    else { console.log("F"); }
+
+    // 논리 연산자: 이항 연산자로 피연산자를 논리형을 사용하는 연산자
+    // 1. AND: 피연산자가 모두 참인 경우에만 참을 반환하는 연산자
+    console.log(true && true);  // true
+    console.log(false && true); // false
+    console.log(true && false); // false
+    console.log(false && false);// false
+    
+    // 2. OR: 하나의 피연산자가 참이면 참을 반환하는 연산자
+    console.log(true || true);  // true
+    console.log(false || true); // true
+    console.log(true || false); // true
+    console.log(false || false);// false
+
+    // 3. NOT: 단항 연산자로 피연산자의 값을 반전
+    console.log(!true);  // false
+    console.log(!false); // true
+
+
+    var score = 50;
+    if ((score > 100) || (score < 0)) { console.log("잘못 입력하셨습니다."); }
+    else if (score >= 90) { console.log("A"); }
+    else if (score >= 80) { console.log("B"); }
+    else if (score >= 70) { console.log("C"); }
+    else if (score >= 60) { console.log("D"); }
+    else { console.log("F"); }
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>5_object.html</h1>  
+  <script>
+    // function Student(name, kor, eng, math) {
+    //   this.name = name;
+    //   this.kor = kor;
+    //   this.eng = eng;
+    //   this.math = math;
+    //   this.total = function() {
+    //      return this.kor + this.eng + this.math;
+    //   };
+    //   this.average = function() {
+    //     return (this.kor + this.eng + this.math) / 3;
+    //   };
+    // }
+    // var daniel = new Student("daniel", 10, 20, 30);
+    // var tot1 = daniel.total();
+    // var avg1 = daniel.average();
+    // console.log(daniel.name, tot1, avg1);
+
+    // var susan = new Student("susan", 20, 30, 40);
+    // var tot2 = susan.total();
+    // var avg2 = susan.average();
+    // console.log(susan.name, tot2, avg2);
+
+    // 이전의 코드는 각 객체마다 메서드가 개별적으로 생성되므로
+    // 메모리의 낭비가 발생할 수 있다. 이를 해결하기 위해 모든 객체가
+    // 해당 메서드를 공유하여 사용할 수 있도록 합니다.
+    function Student(name, kor, eng, math) {
+      this.name = name;
+      this.kor = kor;
+      this.eng = eng;
+      this.math = math;
+    }
+
+    // 아래의 코드는 서로 다른 객체가 메서드를 공유하기 위한
+    // 코드입니다.
+    Student.prototype.total = function() {
+         return this.kor + this.eng + this.math;
+    };
+    
+    Student.prototype.average = function() {
+        return (this.kor + this.eng + this.math) / 3;
+    };
+    var daniel = new Student("daniel", 10, 20, 30);
+    var tot1 = daniel.total();
+    var avg1 = daniel.average();
+    console.log(daniel.name, tot1, avg1);
+
+    var susan = new Student("susan", 20, 30, 40);
+    var tot2 = susan.total();
+    var avg2 = susan.average();
+    console.log(susan.name, tot2, avg2);
+
+    // 자바에서 모든 것이 객체입니다.
+    const arr = []; // const arr = new Array();
+    console.log(arr.length)
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>7_function.html</h1> 
+  <script>
+    // 함수(function): 어떤 기능이 구현되어 있는 코드 덩어리
+    // usage:
+    // function 함수명([매개변수[,...]])
+    //    함수코드
+    //    함수코드
+    // }
+
+    // hello x 3
+    function print_hello3() {
+      for (var i = 0; i < 3; i++) {
+        console.log("hello");
+      }
+    }
+
+    // 함수 호출 방법: 함수명([값,[...]])
+    print_hello3();
+
+    // 매개 변수의 사용 
+    function print_hello(cnt) { // 매개변수(parameter)
+      for (var i = 0; i < cnt; i++) {
+        console.log("hello");
+      }
+    }
+
+    // 함수 호출 방법: 함수명([값,[...]])
+    print_hello(3); // 인자(argument)
+
+    // 값의 반환
+    function add(a, b) {
+      // 값의 반환 방법: return 값
+      return a + b;
+    }
+
+    // 함수가 호출된 자리에는 함수가 반환한 값으로 치환됩니다.
+    // 따라서 함수 호출식도 표현식입니다.
+    var result = add(1,1);
+    console.log(result);
+
+
+    // 함수의 종류
+    // 매개변수와 반환갑의 유무에 따라 총 4가지로 분류할 수 있습니다.
+    // 1. 매개변수와 반환값이 모두 있는 경우
+    function square(x) { return x ** 2; }
+    console.log(square(2));
+
+    // 2. 매개변수만 있는 경우
+    console.log("hello");
+
+    // 3. 반환값만 있는 경우
+    // var pi = 3.11
+    function pi() { return 3.14; }
+
+    var r = 2;
+    result = r ** 2 * pi();
+
+    // 4. 매개변수와 반환값이 모두 없는 경우
+
+    function display_menu() {
+      console.log("# 게임 메뉴 #");
+      console.log("1. 시작하기");
+      console.log("2. 불러오기");
+      console.log("3. 저장하기");
+      console.log("4. 종료하기");
+    }
+
+    display_menu();
+    display_menu();
+    
+  </script>
+</body>
+</html>

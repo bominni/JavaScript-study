@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+</head>
+<body>
+  <!-- 자식 & 후손 선택자
+  <div>
+    <span>자식1</span>
+    <span>자식2</span>
+    <p>
+      <span>손자</span>
+      <span>손자</span>
+    </p>
+  </div>
+  <script>
+    // 자식 선택자: >
+    $("div > span").css("background", "yellow");
+
+    // 후손 선택자: 공백
+    $("div span").css("color", "red");
+  </script> -->
+
+  <!-- 필터 선택자 1. :eq 
+  <h3>:eq</h3>
+  <ul>
+    <li>item0</li>
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+    <li>item4</li>
+  </ul>
+  <script>
+    // usage: 태그명:eq(index)
+    $("li:eq(0)").css("background", "yellow");
+    $("li:eq(3)").css("background", "lightblue");
+  </script> -->
+
+  <!-- 필터 선택자 2. :first, :last
+  <h3>:eq</h3>
+  <ul>
+    <li>item0</li>
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+    <li>item4</li>
+  </ul>
+  <script>
+    $("li:first").css("background", "yellow");
+    $("li:last").css("background", "lightblue");
+  </script> -->
+
+  <!-- 필터 선택자 3. :odd, :even
+  <h3>:eq</h3>
+  <ul>
+    <li>item0</li>
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+    <li>item4</li>
+  </ul>
+  <script>
+    // 짝수 요소만 선택
+    $("li:even").css("background", "lightgray");
+
+    // 홀수 요소만 선택
+    // $("li:odd").css("background", "lightblue");
+  </script> -->
+
+  <!-- 필터 선택자 4. :nth-child
+  <ul>
+    <li>item0</li>
+    <li>item1</li>
+    <li>item2</li>
+  </ul>
+  <hr>
+  <ul>
+    <li>item0</li>
+    <li>item1</li>
+    <li>item2</li>
+  </ul>
+  <script>
+    // nth-child의 인덱스는 1부터 시작합니다.
+    $("li:nth-child(1)").css("background", "yellow");
+
+    // 전체에서 첫 번째 요소를 의미합니다.
+    $("li:eq(1)").css("background", "lightblue");
+  </script> -->
+  
+  <!-- 필터 선택자 5. :first-child, :last-child -->
+  <ul>
+    <li>item0</li>
+    <li>item1</li>
+    <li>item2</li>
+  </ul>
+  <hr>
+  <ul>
+    <li>item0</li>
+    <li>item1</li>
+    <li>item2</li>
+  </ul>
+  <script>
+    // 첫 번째 자식 선택자
+    $("li:first-child").css("background", "yellow");
+
+    // 마지막 자식 선택자
+    $("li:last-child").css("background", "lightblue");
+
+  </script> -->
+
+</body>
+</html>
