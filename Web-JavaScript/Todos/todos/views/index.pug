@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  script(src='/javascripts/index.js')
+  h1  Todo list
+  input(id='job' type='text')
+  button(id='save') 추가
+  if todos
+    table
+      thead
+        tr
+          td 번호
+          td 일
+          td 완료
+      tbody(id='todo-body')
+        each todo in todos
+          tr
+            td=todo.todoId
+            td=todo.job
+            td 
+              button(id=todo.todoId class='delete-button') 삭제
+  else
+    p 할 일이 없습니다.
