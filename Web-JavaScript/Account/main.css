@@ -1,0 +1,91 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FAFAFA;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main tr {
+    height: 80px;
+}
+
+.content .image {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.content .title {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    color: #000000;
+}
+
+.main .main_text {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+    color: #000000;
+}
+
+.main th {
+    text-align: left;
+}
+
+.main td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin-left: 30px;
+}
+
+.main .input_box {
+    width: 400px;
+    height: 40px;
+    font-size: 18px;
+    border: none;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.main .input_box:focus {
+    outline: none;
+}
+
+.main .check {
+    width: 330px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main .checks {
+    width: 210px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.add {
+    background-color: #646eef;
+    color: white;
+    border: none;
+    width: 80px;
+    height: 40px;
+    font-size: 18px;
+    float: right;
+    border-radius: 5px;
+}

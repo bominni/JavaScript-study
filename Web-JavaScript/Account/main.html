@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <title>Web</title>
+</head>
+<body>
+    <div class="content">
+        <img src="computer.png" class="image">
+        <p class="title">거래처 등록</p>
+    </div>
+    <div>
+        <form onsubmit="return check()">
+            <table class="main">
+                <tr class="name">
+                    <th class="main_text">상호</th>
+                    <td><input type="text" id="company_name" class="input_box" ></td>
+                </tr>
+                <tr class="main_people">
+                    <th class="main_text" >대표자</th>
+                    <td><input type="text" id="company_people" class="input_box" ></td>
+                </tr>
+                <tr class="company_number">
+                    <th class="main_text" >사업자등록번호</th>
+                    <td><input type="text" id="company_numbers" class="input_box" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" ></td>
+                </tr>
+                <tr class="phonenumber">
+                    <th class="main_text" >대표전화</th>
+                    <td><input type="text" id="company_phonenumber" class="input_box" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"></td>
+                </tr>
+                <tr class="id">
+                    <th class="main_text" >ID</th>
+                    <td><input type="text" id="user_id" class="input_box" ></td>
+                </tr>
+                <tr class="password">
+                    <th class="main_text" >비밀번호</th>
+                    <td><input type="password" id="user_pw" class="input_box" ></td>
+                </tr>
+                <tr class="check_password">
+                    <th class="main_text" >비밀번호확인</th>
+                    <td><input type="password" id="user_pw2" class="input_box" ></td>
+                </tr>
+                <tr class="company">
+                    <th class="main_text">분류</th>
+                    <td class="check">
+                        <label><input type="radio" id="company_checks" name="company_checks" value="대기업" >대기업</label>
+                        <label><input type="radio" id="company_checks" name="company_checks" value="중소기업" >중소기업</label>
+                        <label><input type="radio" id="company_checks" name="company_checks" value="소공상인" >소공상인</label>
+                    </td>
+                </tr>
+                <tr class="agree">
+                    <th class="main_text">개인정보동의</th>
+                    <td class="checks">
+                        <label><input type="radio" id="agree_checks" name="agree_checks" value="동의함" >동의함</label>
+                        <label><input type="radio" id="agree_checks" name="agree_checks" value="동의 안함" >동의 안함</label>
+                    </td>
+                </tr>
+                <tr class="process">
+                    <th class="main_text">처리방법</th>
+                    <td class="checks">
+                        <label><input type="radio" id="process_checks" name="process_checks" value="즉시등록" >즉시등록</label>
+                        <label><input type="radio" id="process_checks" name="process_checks" value="임시저장" >임시저장</label>
+                    </td>
+                </tr>
+            </table>
+            <button class="add">등록</button>
+        </form>
+    </div>
+</body>
+</html>
