@@ -1,0 +1,12 @@
+.main_tteokbokki {
+    width: 1500px;
+    margin: 0 auto;
+}
+
+.main_tteokbokki .content {
+    width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

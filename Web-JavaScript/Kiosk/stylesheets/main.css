@@ -1,0 +1,8 @@
+.main_page {
+    width: 1500px;
+    margin: 0 auto;
+}
+
+.main_page .main_text {
+    font-size: 20px;
+}
