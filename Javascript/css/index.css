@@ -1,0 +1,20 @@
+.alert-box {
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 5px;
+    display: none; /* 숨기는 법 */
+}
+.alert-btn {
+    width: 50px;
+    height: 30px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    margin: 10px 0 0 5px;
+}
+.open {
+    background-color: pink;
+}
+.close {
+    background-color: skyblue;
+}
