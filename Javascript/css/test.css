@@ -2,19 +2,23 @@
     background-color: #eee;
     padding: 20px;
     border-radius: 5px;
-    display: none; /* 숨기는 법 */
+    display: none;
+    margin-bottom: 5px;
 }
 .alert-btn {
-    width: 50px;
-    height: 30px;
     border: none;
+    padding: 5px;
     color: white;
+    padding: 5px;
     border-radius: 5px;
-    margin: 10px 0 0 5px;
+    margin-left: 3px;
 }
 .open {
     background-color: pink;
 }
 .close {
     background-color: skyblue;
+}
+.btn {
+    background-color: cornflowerblue;
 }

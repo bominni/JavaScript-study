@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/test.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <h1 id="hello">안녕하세요</h1> -->
+    <!-- <h1 id="hi">JS 초보에요</h1> -->
+    <div class="alert-box" id="alert-box">
+      <p class="title">알람창</p>
+      <!-- <button onclick="alertWhether('none')" class="alert-btn close">닫기</button> -->
+      <button id="close">닫기</button>
+    </div>
+    <!-- <button onclick="alertWhether('block')" class="alert-btn open">열기</button> -->
+    <button
+      class="alert-btn btn"
+      id="alert-box"
+      onclick="alertWhether('아이디입력하세요');"
+    >
+      버튼1
+    </button>
+    <button
+      class="alert-btn btn"
+      id="alert-box"
+      onclick="alertWhether('비번입력하세요');"
+    >
+      버튼2
+    </button>
+
+    <script>
+      // document.getElementById('hello').innerHTML = '안녕';
+      // document.getElementById('hello').style.fontSize = '16px';
+      // document.getElementByKd('hi').innerHTML = 'JS 고수에요';
+      // document.getElementById('hello').style.color = 'pink;
+
+      function alertWhether(content) {
+        document.getElementById("alert-box").innerHTML = content;
+        // document.getElementsByClassName('title')[0].innerHTML = content /* 찾은것 중 위에서 몇번째 */
+        document.getElementById("alert-box").style.display = "block";
+      }
+      document.getElementById('close').addEventListener('click', function() { /* addEventListener() */
+        document.getElementById('alert').style.display = 'none'
+      });
+
+      // function alertWhether(alert) { /* 자바스크립트 fuunction(함수) 문법 -> 간 코드 축약하고 싶을 때 사용 */
+      //     document.getElementById('alert-box').style.display = alert;
+      // }
+      // function plus(num) {
+      //     2 + num
+      // }
+
+      // function alertOpen() {
+      //     document.getElementById('alert-box').style.display = 'block';
+      // }
+      // function alertClose() {
+      //     document.getElementById('alert-box').style.display = 'none';
+      // }
+    </script>
+  </body>
+</html>
