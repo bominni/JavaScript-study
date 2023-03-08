@@ -11,10 +11,18 @@
     background: rgba(0,0,0,0.5);
     z-index: 5;
     padding: 30px;
-    display: none;
+    /* display: none; */
+    visibility: hidden; /* 애니메이션을줄 때 dsiplay: none 대용 */
+    opacity: 0;
+    transition: all 1s;
 }
 .white-bg {
     background: white;
     border-radius: 5px;
     padding: 30px;
+}
+.show-modal {
+    display: block;
+    visibility: visible;
+    opacity: 1;
 }

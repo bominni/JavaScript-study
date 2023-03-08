@@ -18,13 +18,19 @@
     ></script>
   </head>
   <body>
-
-    <div class="black-bg">
-        <div class="white-bg">
-            <h4>로그인하세요</h4>
-            <button class="btn btn-danger" id="close">닫기</button>
-        </div>
+    <div class="black-bg show-modal">
+      <div class="white-bg">
+        <h4>로그인하세요</h4>
+        <button class="btn btn-danger" id="close">닫기</button>
+      </div>
     </div>
+
+    <!-- <div class="black-bg show-modal">
+      <div class="white-bg">
+        <h4>로그인하세요</h4>
+        <button class="btn btn-danger" id="close">닫기</button>
+      </div>
+    </div> -->
 
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
@@ -52,22 +58,28 @@
     <button id="test-btn">버튼</button> -->
 
     <script>
-        $('#login').on('click', function() {
-            $('.black-bg').css('display','block');
-        })
-        $('#close').on('click', function() {
-            $('.black-bg').css('display', 'none');
-        })
-        
-        // document.querySelector('#test-btn').addEventListener()
-        // $('#test-btn').on('click', function() {
-        //     $('.hello').slideUp();
-        // })
+      //   $('#login').on("click", function() {
+      //     $('.black-bg').addClass('show-modal');
+      //   })
+      //   $("#close").on("click", function () {
+      //     $(".black-bg").css("display", "none");
+      //   });
+      $("#login").on("click", function () {
+        $(".black-bg").css("display", "block");
+      });
+      $("#close").on("click", function () {
+        $(".black-bg").css("display", "none");
+      });
 
-        // document.getElementById('hello').innerHTML = '바보'
-        $('.hello').html('바보');
-        // $('.hello').css('color', 'red');
-        // $('.hello').addClasss('show'); /* 제거는 .removeClass(), 토글은 .toggleClass() */
+      // document.querySelector('#test-btn').addEventListener()
+      // $('#test-btn').on('click', function() {
+      //     $('.hello').slideUp();
+      // })
+
+      // document.getElementById('hello').innerHTML = '바보'
+      $(".hello").html("바보");
+      // $('.hello').css('color', 'red');
+      // $('.hello').addClasss('show'); /* 제거는 .removeClass(), 토글은 .toggleClass() */
 
       document.querySelector(".list-group")[0];
       /* css문법 그대로 쓸 수 있는 셀렉터임, 하지만 맨 위에 나오는 한개만 찾아줌 */
