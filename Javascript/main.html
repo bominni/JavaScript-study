@@ -21,9 +21,38 @@
     <div class="black-bg show-modal">
       <div class="white-bg">
         <h4>로그인하세요</h4>
-        <button class="btn btn-danger" id="close">닫기</button>
+        <form action="success.html">
+            <div class="my-3">
+                <input type="text" class="form-control" id="email">
+            </div>
+            <div class="my-3">
+                <input type="password" class="form-control" id="pw">
+            </div>
+            <button type="submit" class="btn btn-primary" id="send">전송</button>
+            <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form>
       </div>
     </div>
+
+    <script>
+        if(1 == 3 ) {
+            console.log('맞아요1');
+        } else if(3 == 3) {
+            console.log('맞아요2');
+        }
+        
+        // $('form').on('submit', function() {})
+        $('#send').on('click', function(e) {
+            if (document.getElementById('email').value == "" || document.getElementById('pw').value == "") { /* if(조건) { 조건이 참일 때 실행할 코드 } */
+                alert('input이 비었습니다. 입력해주세요.')
+                e.preventDefault();
+            } else if (document.getElementById('pw').value.length < 6) {
+                alert('비밀번호 6자 이상입력해주세요.')
+            } else { /* else { 위 조건이 참이 아닐 때 실행할 코드 } */
+                cosnsole.log('로그인 성공입니다.')
+            }
+        })
+    </script>
 
     <!-- <div class="black-bg show-modal">
       <div class="white-bg">
@@ -50,7 +79,12 @@
       <li class="list-group-item">And a fifth one</li>
     </ul>
 
-    <button class="btn btn-warning" id="login">로그인</button>
+    <!-- <button class="btn btn-warning" id="login">로그인</button> -->
+
+    <div class="main-bg">
+        <h4>Shirts on Sale</h4>
+        <button id="login" class="btn btn-danger">로그인</button>
+    </div>
 
     <!-- <P class="hello">안녕</P>
     <P class="hello">안녕</P>
