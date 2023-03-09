@@ -52,45 +52,45 @@
         console.log("맞아요2");
       }
 
-      $('form').on('submit', function() {
-        var 입력한값 = document.getElementById('email').value;
+      $("form").on("submit", function () {
+        var 입력한값 = document.getElementById("email").value;
 
-        if(입력한값 == ''){
-            alert('아이디를 입력해주세요')
+        if (입력한값 == "") {
+          alert("아이디를 입력해주세요");
         }
-        if(/\S+@\S+.\S+/.test(입력한값)) {
-            alert('이메일 형식이 아닙니다.')
+        if (/\S+@\S+.\S+/.test(입력한값)) {
+          alert("이메일 형식이 아닙니다.");
         }
-      })
+      });
 
-      $('form').on('submit', function(e) {
-        var 비번 = document.getElementById('pw').value;
+      $("form").on("submit", function (e) {
+        var 비번 = document.getElementById("pw").value;
 
-        if(비번 == '') {
-            alert('비번을 입력해주세요');
-            e.preventDefault();
-        } else if(/[A-Z]/.test(비번) == false) {
-            alert('대분자 1개 이상이 필요합니다.')
-            e.preventDefault();
+        if (비번 == "") {
+          alert("비번을 입력해주세요");
+          e.preventDefault();
+        } else if (/[A-Z]/.test(비번) == false) {
+          alert("대분자 1개 이상이 필요합니다.");
+          e.preventDefault();
         }
-      })
+      });
 
       // $('form').on('submit', function() {})
-    //   $("#send").on("click", function (e) {
-    //     if (document.getElementById("email").value == "") {
-    //       /* if(조건) { 조건이 참일 때 실행할 코드 } */
-    //       alert("이메일을 입력해주세요.");
-    //       e.preventDefault();
-    //     } else if(document.getElementById("pw").value == "") {
-    //         alert('비번을 입력해주세요.');
-    //         e.preventDefault();
-    //     } else if (document.getElementById("pw").value.length < 6) {
-    //       alert("비밀번호 6자 이상입력해주세요.");
-    //     } else {
-    //       /* else { 위 조건이 참이 아닐 때 실행할 코드 } */
-    //       cosnsole.log("로그인 성공입니다.");
-    //     }
-    //   });
+      //   $("#send").on("click", function (e) {
+      //     if (document.getElementById("email").value == "") {
+      //       /* if(조건) { 조건이 참일 때 실행할 코드 } */
+      //       alert("이메일을 입력해주세요.");
+      //       e.preventDefault();
+      //     } else if(document.getElementById("pw").value == "") {
+      //         alert('비번을 입력해주세요.');
+      //         e.preventDefault();
+      //     } else if (document.getElementById("pw").value.length < 6) {
+      //       alert("비밀번호 6자 이상입력해주세요.");
+      //     } else {
+      //       /* else { 위 조건이 참이 아닐 때 실행할 코드 } */
+      //       cosnsole.log("로그인 성공입니다.");
+      //     }
+      //   });
     </script>
 
     <!-- <div class="black-bg show-modal">
@@ -152,6 +152,67 @@
       <span id="num">5</span>초 이내 구매시 사은품 증정!
     </div>
 
+    <div style="overflow: hidden">
+      <div class="slide-container">
+        <div class="slide-box">
+          <img src="img/car1.png" />
+        </div>
+        <div class="slide-box">
+          <img src="img/car2.png" />
+        </div>
+        <div class="slide-box">
+          <img src="img/car3.png" />
+        </div>
+      </div>
+    </div>
+
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    <button class="slide-next">다음</button>
+    <button class="slide-before">이전</button>
+
+    <script>
+      var 지금사진 = 1;
+
+      $(".slide-1").on("click", function () {
+        $(".slide-container").css("transform", "translateX(0vw)");
+      });
+      $(".slide-2").on("click", function () {
+        $(".slide-container").css("transform", "translateX(-100vw)");
+      });
+      $(".slide-3").on("click", function () {
+        $(".slide-container").css("transform", "translateX(-200vw)");
+      });
+      $(".slide-next").on("click", function () {
+        if (지금사진 == 1) {
+          $(".slide-container").css("transform", "translateX(-100vw)");
+          지금사진 += 1;
+        } else if (지금사진 == 2) {
+          $(".slide-container").css("transform", "translateX(-200vw)");
+          지금사진 += 1;
+        } else {
+          $(".slide-container").css("transform", "translateX(0vw)");
+          지금사진 = 1;
+        }
+      });
+      $(".slide-before").on("click", function () {
+        if (지금사진 == 1) {
+          $(".slide-container").css("transform", "translateX(-200vw)");
+          지금사진;
+        } else if (지금사진 == 2) {
+          $(".slide-container").css("transform", "translateX(0vw)");
+        } else {
+          $(".slide-container").css("transform", "translateX(-100vw)");
+        }
+      });
+
+    // $(".slide-before").on("click", function () {
+    //     $('.slide-container').css('transform', 'translateX(- ' + 지금시간 + '00vw)');
+    //     지금시간+=1;
+    //   });
+    </script>
+
     <script>
       var count = 5;
       setInterval(function () {
@@ -160,8 +221,8 @@
           document.querySelector("#num").innerHTML = count;
         }
       }, 1000);
-      setTimeout(function() {
-        $('.alert-danger').hide();
+      setTimeout(function () {
+        $(".alert-danger").hide();
       }, 5000);
 
       // setTimeout(function(){}, ms) /* x초 후에 코드 실행 */
