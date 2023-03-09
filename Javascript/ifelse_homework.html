@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function 삼육구게임(num) {
+            if(num%3 == 0 && num%9 != 0) {
+                console.log('박수!');
+            } else if (num%9 == 0) {
+                console.log('박수*2')
+            } else {
+                console.log('통과!');
+            }
+        }
+        삼육구게임(11)
+
+        function 삼육구게임응용(num) {
+            if((num%10) == 3 || (num%10) == 6 || (num%10) == 9) {
+                console.log('박수!');
+            } else {
+                console.log('통과!')
+            }
+        }
+        삼육구게임응용(19)
+
+        function 합격했냐(score1, score2) {
+            if(score1 < 40 || score2 < 40) {
+                console.log('불합격');
+            } else if(score1 + score2 < 120) {
+                console.log('불합격');
+            } else {
+                console.log('합격');
+            }
+        }
+        합격했냐(50,50)
+
+        function 합격했냐응용(score1, score2) {
+            if((0 > score1 || score1 > 100) || (0 > score2 || score2 > 100)) {
+                alert('장난치지 마!')
+            } else if(score1 < 40 || score2 < 40) {
+                console.log('불합격');
+            } else if(score1 + score2 < 120) {
+                console.log('불합격');
+            } else {
+                console.log('합격');
+            }
+        }
+        합격했냐응용(30, 100);
+    </script>
+</body>
+</html>
