@@ -214,6 +214,46 @@
     </script>
 
     <script>
+        // console.log(vat(55555));
+
+        // function vat(a) {
+        //     // 소수점 반올림하는 법 -> 숫자.toFixed(몇자리)
+        //     var num = (a * 1.1).toFixed(1);
+        //     // return num
+        //     return parseFloat(num) /* parseFloat, parseInt */
+        // }
+
+        // console.log(함수(2, 10))
+
+        // function 함수(a,b) {
+        //     return (a*60 + b) * 1000;
+        // }
+
+        console.log(함수(10, true))
+
+        // function 함수(price, whether) {
+        //     if(whether == 'false') {
+        //         return price - (price*0.1);
+        //     } else {
+        //         var last = price - (price*0.1);
+        //         return (last - 1.5).toFixed(1);
+        //     }
+        // }
+
+        function 함수(price, whether) {
+            var result = price * 0.9;
+            if(whether == true) {
+                result = result - 1.5;
+            }
+            return result;
+        }
+
+        // function 함수() {
+        //     return 123; /* 함수쓰고 그 자리에 뭔가 뱉고싶으면 return */
+        // }
+    </script>
+
+    <script>
       var count = 5;
       setInterval(function () {
         count -= 1;
