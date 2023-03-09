@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>태조 이성계가 태어난 년도는?</p>
+    <input type="text" id="answer">
+    <button id="send-answer">제출</button>
+    <script>
+        // const place = '대구'
+        // let age = 19;
+
+        // var 예금액 = 10000;
+        // var 미래예금액 = 0;
+
+        // if (예금액 >= 50000) {
+        //     미래예금액 = 예금액 * 1.2 * 1.2;
+        // } else {
+        //     미래예금액 = 예금액 * 1.15 * 1.15;
+        // }
+        // console.log(미래예금액)
+
+        // var first = 360;
+        // var last = 0;
+        // last = first + (first*2/3) + ((first*2/3)*2/3)
+        // console.log(last)
+        
+        // var count = 0;
+        // $('#send-answer').on("click", function() {
+        //     if(document.getElementById('#answer').value == "1335") {
+        //         alert('성공!');
+        //     } else {
+        //         count += 1
+        //         if(count >= 3) {
+        //             alert('멍청아');
+        //         }
+        //         alert('틀렸습니다.!')
+        //     }
+        // });
+
+        var count = 0;
+        document.getElementById('#send-answer').addEventListener('click', function() {
+            count += 1;
+            var 유저답안 = document.querySelector('#answer').value;
+            if (유저답안 == '1335') {
+                alert('성공');
+            } else if( count >= 3 && 유저답안 != '1335') {
+                alert('멍청아')
+            }
+        })
+    </script>
+</body>
+</html>
