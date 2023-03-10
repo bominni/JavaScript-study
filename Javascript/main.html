@@ -111,6 +111,23 @@
     </nav>
 
     <script>
+      $(window).on("scroll", function () {  
+        if (window.scrollY > 100) {
+          $(".navbar-brand").css("font-size", "20px");
+        } else {
+          $(".navbar-brand").css("font-size", "25px");
+        }
+      });
+      //   window.addEventListener("scroll", function () {
+      //     window.scrollY(0, 100);
+      //   });
+
+      // $(window).on('scroll', function() {
+      //     $(window).scrollTop()
+      // })
+    </script>
+
+    <script>
       // 함수 안에서 변수 만들면 사용가능 범위는 함수 내부
       // 함수 밖에서 만든 변수는 함수 안에서 사용 가능
 
@@ -147,6 +164,33 @@
       <h4>Shirts on Sale</h4>
       <button id="login" class="btn btn-danger">로그인</button>
     </div>
+
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas
+      voliptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat
+      sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur
+      praesentium exercitationem.
+    </div>
+
+    <script>
+      // div의 스크롤바 내린 양 + 눈에 보이는 div높이 == div의 실제높이
+      $('.lorem').on('scroll', function() {
+          var 스크롤양 = document.querySelector('.lorem').scrollTop;
+          var 실제높이 = document.querySelector('.lorem').scrollHeight;
+          var 높이 = document.querySelector('.lorem').clientHeight;
+          if (스크롤양 + 높이 > 실제높이 - 10) { /* scroll 다룰 때 주의점 - scroll 이벤트리스너 안의 코드는 1초에 60번 이상 실행됨, 바닥체크도 여러번 중복으로 해줄듯 */
+            alert('다읽음');
+          }
+      });
+      document.documentElement.scrollHeight;
+    //   document.querySelector('html').scrollHeight;
+      document.querySelector('html').clientHeight;
+      window.scrollY;
+    //   document.querySelector('html').scrollTop;
+      
+    </script>
+
+    <div style="height: 1000px"></div>
 
     <div class="alert alert-danger">
       <span id="num">5</span>초 이내 구매시 사은품 증정!
@@ -207,50 +251,50 @@
         }
       });
 
-    // $(".slide-before").on("click", function () {
-    //     $('.slide-container').css('transform', 'translateX(- ' + 지금시간 + '00vw)');
-    //     지금시간+=1;
-    //   });
+      // $(".slide-before").on("click", function () {
+      //     $('.slide-container').css('transform', 'translateX(- ' + 지금시간 + '00vw)');
+      //     지금시간+=1;
+      //   });
     </script>
 
     <script>
-        // console.log(vat(55555));
+      // console.log(vat(55555));
 
-        // function vat(a) {
-        //     // 소수점 반올림하는 법 -> 숫자.toFixed(몇자리)
-        //     var num = (a * 1.1).toFixed(1);
-        //     // return num
-        //     return parseFloat(num) /* parseFloat, parseInt */
-        // }
+      // function vat(a) {
+      //     // 소수점 반올림하는 법 -> 숫자.toFixed(몇자리)
+      //     var num = (a * 1.1).toFixed(1);
+      //     // return num
+      //     return parseFloat(num) /* parseFloat, parseInt */
+      // }
 
-        // console.log(함수(2, 10))
+      // console.log(함수(2, 10))
 
-        // function 함수(a,b) {
-        //     return (a*60 + b) * 1000;
-        // }
+      // function 함수(a,b) {
+      //     return (a*60 + b) * 1000;
+      // }
 
-        console.log(함수(10, true))
+      console.log(함수(10, true));
 
-        // function 함수(price, whether) {
-        //     if(whether == 'false') {
-        //         return price - (price*0.1);
-        //     } else {
-        //         var last = price - (price*0.1);
-        //         return (last - 1.5).toFixed(1);
-        //     }
-        // }
+      // function 함수(price, whether) {
+      //     if(whether == 'false') {
+      //         return price - (price*0.1);
+      //     } else {
+      //         var last = price - (price*0.1);
+      //         return (last - 1.5).toFixed(1);
+      //     }
+      // }
 
-        function 함수(price, whether) {
-            var result = price * 0.9;
-            if(whether == true) {
-                result = result - 1.5;
-            }
-            return result;
+      function 함수(price, whether) {
+        var result = price * 0.9;
+        if (whether == true) {
+          result = result - 1.5;
         }
+        return result;
+      }
 
-        // function 함수() {
-        //     return 123; /* 함수쓰고 그 자리에 뭔가 뱉고싶으면 return */
-        // }
+      // function 함수() {
+      //     return 123; /* 함수쓰고 그 자리에 뭔가 뱉고싶으면 return */
+      // }
     </script>
 
     <script>

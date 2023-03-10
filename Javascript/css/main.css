@@ -1,3 +1,7 @@
+:root {
+    scroll-behavior: auto; /* scroll바 천천히 움직이지 X */
+}
+
 .list-group {
     display: none;
 }
@@ -44,4 +48,13 @@
 }
 .slide-box img {
     width: 100%;
+}
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+.navbar-brand {
+    font-size: 30px;
+    transition: all 1s;
 }
