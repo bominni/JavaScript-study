@@ -111,7 +111,7 @@
     </nav>
 
     <script>
-      $(window).on("scroll", function () {  
+      $(window).on("scroll", function () {
         if (window.scrollY > 100) {
           $(".navbar-brand").css("font-size", "20px");
         } else {
@@ -174,20 +174,20 @@
 
     <script>
       // div의 스크롤바 내린 양 + 눈에 보이는 div높이 == div의 실제높이
-      $('.lorem').on('scroll', function() {
-          var 스크롤양 = document.querySelector('.lorem').scrollTop;
-          var 실제높이 = document.querySelector('.lorem').scrollHeight;
-          var 높이 = document.querySelector('.lorem').clientHeight;
-          if (스크롤양 + 높이 > 실제높이 - 10) { /* scroll 다룰 때 주의점 - scroll 이벤트리스너 안의 코드는 1초에 60번 이상 실행됨, 바닥체크도 여러번 중복으로 해줄듯 */
-            alert('다읽음');
-          }
+      $(".lorem").on("scroll", function () {
+        var 스크롤양 = document.querySelector(".lorem").scrollTop;
+        var 실제높이 = document.querySelector(".lorem").scrollHeight;
+        var 높이 = document.querySelector(".lorem").clientHeight;
+        if (스크롤양 + 높이 > 실제높이 - 10) {
+          /* scroll 다룰 때 주의점 - scroll 이벤트리스너 안의 코드는 1초에 60번 이상 실행됨, 바닥체크도 여러번 중복으로 해줄듯 */
+          alert("다읽음");
+        }
       });
       document.documentElement.scrollHeight;
-    //   document.querySelector('html').scrollHeight;
-      document.querySelector('html').clientHeight;
+      //   document.querySelector('html').scrollHeight;
+      document.querySelector("html").clientHeight;
       window.scrollY;
-    //   document.querySelector('html').scrollTop;
-      
+      //   document.querySelector('html').scrollTop;
     </script>
 
     <div style="height: 1000px"></div>
@@ -338,6 +338,9 @@
       $("#close").on("click", function () {
         $(".black-bg").css("display", "none");
       });
+      $('.black-bg').on('click', function() {
+        $('.black-bg').css('display', 'none');
+      });
 
       // document.querySelector('#test-btn').addEventListener()
       // $('#test-btn').on('click', function() {
@@ -363,7 +366,7 @@
             ); /* 원하는 요소에 클래스명 추가하는 방법 */
           /* toggle은 show가 있으면 제거, 없으면 추가하라는 뜻 */
         });
-      /* 
+      /*
         jQuery는 라이브러리 -> 함수명만 짧아짐
         $('.navbar-toggler').on('click', function(){
             document.querySelectorAll('.list-group')[0].classList.toggle('show');
