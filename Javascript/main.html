@@ -338,9 +338,22 @@
       $("#close").on("click", function () {
         $(".black-bg").css("display", "none");
       });
-      $('.black-bg').on('click', function() {
-        $('.black-bg').css('display', 'none');
-      });
+      document.querySelector('.black-bg').addEventListener('click', function(e) {
+        if (e.target == document.querySelector('.black-bg')) {
+          document.querySelector('.black-bg').classList.remove('show-modal')
+        }
+      })
+      // $('.black-bg').on('click', function(e) {
+      //   // e.target; // 유저가 실제로 누른거
+      //   // e.currentTarget; // 이벤트리스너 달린 곳
+      //   // this; // 이벤트리스너 달린 곳
+      //   // e.preventDefault; // 이벤트 기본동작 막아줌
+      //   // e.stopPropagation; // 내 상위요소로 이벤트 버블링 막아줌
+
+      //   if(e.target == $('.black-bg')) {
+      //     $('.black-bg').css("display", "none");
+      //   }
+      // });
 
       // document.querySelector('#test-btn').addEventListener()
       // $('#test-btn').on('click', function() {
