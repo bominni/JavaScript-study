@@ -21,16 +21,45 @@
 
     <div class="container mt-3">
       <div class="card p-3">
-        
+        <span class="car-title">상품명</span>
+        <span class="car-price">가격</span>
       </div>
     </div>
 
+    <form class="container my-5 form-group">
+      <p>상품선택</p>
+      <select class="form-select mt-2">
+        <option>모자</option>
+        <option>셔츠</option>
+      </select>
+      <select class="form-select mt-2 form-hide">
+        <option>95</option>
+        <option>100</option>
+        <option>105</option>
+      </select>
+    </form>
+
+    <script>
+      $('.form-select').eq(0).on('input', function() {
+        var value = $('.form-select').eq(0).val();
+        if(value == '셔츠') {
+          $('.form-select').eq(1).removeClass('form-hide');
+        } else {
+          $('.form-select').eq(1).addClass('form-hide');
+        }
+      })
+    </script>
+
     <script>
       var car = ['소나타', 50000, 'white']; // array 자료형 / 자료간 순서가 존재 함 / 자료간 정렬 가능 / 중간에 자르기도 가능 / 자료검색도 가능 / 맨앞,맨뒤에 자료추가 가능 / 붙일 수 있는 기본함수들 개많음
-      var car2 = {name : '소나타', price : 40000} // object 자료형 / 순서개념 없음
-      car2.price = 60000;
-      console.log(car2['name']);
-      console.log(car2.price);
+      var car2 = {name : '소나타', price : [50000, 3000, 4000] } // object 자료형 / 순서개념 없음
+      // object / array 안에 아무거나 다 넣을 수 있음 / object, array 넣기도 가능
+      // car2.price = 60000;
+      // console.log(car2['name']);
+      // console.log(car2.price);
+      // document.querySelector('.car-title').innerHTML = car2.name;
+      // document.querySelector('.car-price').innerHTML = car2.price;
+      document.querySelector('.car-price').innerHTML = car2.price[0];
     </script>
 
     <div class="container mt-5">
