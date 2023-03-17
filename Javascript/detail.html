@@ -54,20 +54,32 @@
       // document.querySelector('#test').insertAdjacentHTML('beforeend', template);
       // $("#test").append(template);
 
+      var shirts = [95,100,105]
+      var pants = [28,30,32,34];
+
       $('.form-select').eq(0).on('input', function() {
         var value = $('.form-select').eq(0).val();
         if(value == '셔츠') {
           $('.form-select').eq(1).removeClass('form-hide');
           $('.form-select').eq(1).html('');
-          var size = `<option>95</option>
-          <option>100</option>`
-          $('.form-select').eq(1).html(size);
+          shirts.forEach(function(e) { // array에 붙일 수 있는 forEach 반복문
+            $('.form-select').eq(1).append(`<option>${e}</option>`)
+          })
+          // var size = `<option>95</option>
+          // <option>100</option>`
+          // $('.form-select').eq(1).html(size);
         } else if (value == '바지') {
           $('.form-select').eq(1).removeClass('form-hide');
           $('.form-select').eq(1).html('');
-          var size = `<option>28</option>
-          <option>30</option>`
-          $('.form-select').eq(1).html(size);
+          pants.forEach(function(e, i) { // array에 붙일 수 있는 forEach 반복문
+            $('.form-select').eq(1).append(`<option>${pants[i]}</option>`)
+          })
+          // pants.forEach((a) => { // arrow function 사용가능
+          //   $('.form-select').eq(1).append(`<option>${a}</option>`);
+          // })
+          // var size = `<option>28</option>
+          // <option>30</option>`
+          // $('.form-select').eq(1).html(size);
         } else {
           $('.form-select').eq(1).addClass('form-hide');
         }
