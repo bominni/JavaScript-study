@@ -31,19 +31,43 @@
       <select class="form-select mt-2">
         <option>모자</option>
         <option>셔츠</option>
+        <option>바지</option>
       </select>
       <select class="form-select mt-2 form-hide">
         <option>95</option>
         <option>100</option>
-        <option>105</option>
       </select>
     </form>
 
+    <div id="test">
+
+    </div>
+
     <script>
+      // 자바스크립트 html 생성법(1) -> 더 빠름
+      // var a = document.createElement('p');
+      // a.innerHTML = '안녕';
+      // document.querySelector('#test').appendChild(a);
+
+      // 자바스크립트 html 생성법(2)
+      // var template  = '<p>안녕</p>';
+      // document.querySelector('#test').insertAdjacentHTML('beforeend', template);
+      // $("#test").append(template);
+
       $('.form-select').eq(0).on('input', function() {
         var value = $('.form-select').eq(0).val();
         if(value == '셔츠') {
           $('.form-select').eq(1).removeClass('form-hide');
+          $('.form-select').eq(1).html('');
+          var size = `<option>95</option>
+          <option>100</option>`
+          $('.form-select').eq(1).html(size);
+        } else if (value == '바지') {
+          $('.form-select').eq(1).removeClass('form-hide');
+          $('.form-select').eq(1).html('');
+          var size = `<option>28</option>
+          <option>30</option>`
+          $('.form-select').eq(1).html(size);
         } else {
           $('.form-select').eq(1).addClass('form-hide');
         }
@@ -60,6 +84,7 @@
       // document.querySelector('.car-title').innerHTML = car2.name;
       // document.querySelector('.car-price').innerHTML = car2.price;
       document.querySelector('.car-price').innerHTML = car2.price[0];
+
     </script>
 
     <div class="container mt-5">
