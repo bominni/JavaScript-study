@@ -27,12 +27,102 @@
         </div> -->
       </div>
     </div>
+
+    <div class="container mb-3">
+      <button class="btn btn-danger" id="price">가격순 정렬</button>
+    </div>
+
+    <div class="container mb-3">
+      <button class="btn btn-danger" id="korean">다나가순 정렬</button>
+    </div>
+
+    <div class="container mb-3">
+      <button class="btn btn-danger" id="six">6만원 이하 상품</button>
+    </div>
+
     <script>
       var products = [
         { id: 0, price: 70000, title: "Blossom Dress" },
         { id: 1, price: 50000, title: "Springfield Shirt" },
         { id: 2, price: 60000, title: "Black Monastery" },
       ];
+
+      $("#price").click(function () {
+        products.sort(function (a, b) {
+          return a.price - b.price;
+        });
+
+        $(".row").html("");
+
+        products.forEach((a, i) => {
+          var card = `<div class="col-sm-4">
+          <img src="https://via.placeholder.com/600" class="w-100">
+          <h5>${products[i].title}</h5>
+          <p>가격 : ${products[i].price}</p>
+        </div>`;
+          $(".row").append(card);
+        });
+      });
+
+      $("#korean").click(function () {
+        products.sort(function (a, b) {
+          if(a.title < b.title) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
+
+        $(".row").html("");
+
+        products.forEach((a, i) => {
+          var card = `<div class="col-sm-4">
+          <img src="https://via.placeholder.com/600" class="w-100">
+          <h5>${products[i].title}</h5>
+          <p>가격 : ${products[i].price}</p>
+        </div>`;
+          $(".row").append(card);
+        });
+      });
+
+      $("#six").click(function() {
+        var newproducts = products.filter(function(a) {
+          return a.price <= 60000;
+        })
+
+        $(".row").html("");
+
+        newproducts.forEach((a, i) => {
+          var card = `<div class="col-sm-4">
+          <img src="https://via.placeholder.com/600" class="w-100">
+          <h5>${newproducts[i].title}</h5>
+          <p>가격 : ${newproducts[i].price}</p>
+        </div>`;
+          $(".row").append(card);
+        });
+      });
+
+      var array = [7, 3, 5, 2, 40];
+
+      // var newarray = array.map(function(a) { // array 자료 전부 변형하려면
+      //   return a * 1000;
+      // })
+
+      // var newarray = array.filter(function(a) { // filter() 결과는 변수에 저장해서 써야함
+      //   return a < 4
+      // }); // array 자료 원하는것만 골라 내려면
+
+      // var array2 = ['a', 'c', 'b'];
+      // array2.sort(); // 정렬
+      // array2.sort(function(a,b) {
+      //   return b-a;
+      // }) // 역순 정렬
+      // array.sort(function(a,b) {
+      //   return a-b; // 오름차순
+      //   // return b-a; // 내림차순
+      // }) // array 숫자 정렬
+      // array.sort(); // array 문자 정렬
+
       products.forEach((a, i) => {
         var card = `<div class="col-sm-4">
           <img src="https://via.placeholder.com/600" class="w-100">
@@ -56,28 +146,31 @@
       $("#more").click(function () {
         count += 1;
         if (count == 1) {
-          $.get("https://codingapple1.github.io/js/more1.json").done((data1) => {
-            data1.forEach((a, i) => {
-              var card = `<div class="col-sm-4">
+          $.get("https://codingapple1.github.io/js/more1.json").done(
+            (data1) => {
+              data1.forEach((a, i) => {
+                var card = `<div class="col-sm-4">
               <img src="https://via.placeholder.com/600" class="w-100">
               <h5>${data1[i].title}</h5>
               <p>가격 : ${data1[i].price}</p>
             </div>`;
-              $(".row").append(card);
-            });
-          });
-        } else if(count == 2) {
-          $.get("https://codingapple1.github.io/js/more2.json").done((data2) => {
-            data2.forEach((a, i) => {
-            var card = 
-            `<div class="col-sm-4">
+                $(".row").append(card);
+              });
+            }
+          );
+        } else if (count == 2) {
+          $.get("https://codingapple1.github.io/js/more2.json").done(
+            (data2) => {
+              data2.forEach((a, i) => {
+                var card = `<div class="col-sm-4">
               <img src="https://via.placeholder.com/600" class="w-100">
               <h5>${data2[i].title}</h5>
               <p>가격 : ${data2[i].price}</p>
             </div>`;
-            $(".row").append(card);
-          });
-        });
+                $(".row").append(card);
+              });
+            }
+          );
         }
       });
     </script>
