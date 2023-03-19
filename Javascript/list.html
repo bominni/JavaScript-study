@@ -48,22 +48,37 @@
     </script>
 
     <div class="container">
-      <button class="btn btn-danger" id="more">더보기</button>
+      <button class="btn btn-danger moer_btn" id="more">더보기</button>
     </div>
 
     <script>
+      var count = 0;
       $("#more").click(function () {
-        $.get("https://codingapple1.github.io/js/more1.json").done((data) => {
-          data.forEach((a, i) => {
+        count += 1;
+        if (count == 1) {
+          $.get("https://codingapple1.github.io/js/more1.json").done((data1) => {
+            data1.forEach((a, i) => {
+              var card = `<div class="col-sm-4">
+              <img src="https://via.placeholder.com/600" class="w-100">
+              <h5>${data1[i].title}</h5>
+              <p>가격 : ${data1[i].price}</p>
+            </div>`;
+              $(".row").append(card);
+            });
+          });
+        } else if(count == 2) {
+          $.get("https://codingapple1.github.io/js/more2.json").done((data2) => {
+            data2.forEach((a, i) => {
             var card = 
             `<div class="col-sm-4">
               <img src="https://via.placeholder.com/600" class="w-100">
-              <h5>${data[i].title}</h5>
-              <p>가격 : ${data[i].price}</p>
+              <h5>${data2[i].title}</h5>
+              <p>가격 : ${data2[i].price}</p>
             </div>`;
             $(".row").append(card);
           });
         });
+        }
       });
     </script>
     <!-- <div class="card-group container">
