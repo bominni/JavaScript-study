@@ -59,6 +59,7 @@
           <img src="https://via.placeholder.com/600" class="w-100">
           <h5>${products[i].title}</h5>
           <p>가격 : ${products[i].price}</p>
+          <button class="buy">구매</button>
         </div>`;
           $(".row").append(card);
         });
@@ -66,7 +67,7 @@
 
       $("#korean").click(function () {
         products.sort(function (a, b) {
-          if(a.title < b.title) {
+          if (a.title < b.title) {
             return 1;
           } else {
             return -1;
@@ -80,15 +81,16 @@
           <img src="https://via.placeholder.com/600" class="w-100">
           <h5>${products[i].title}</h5>
           <p>가격 : ${products[i].price}</p>
+          <button class="buy">구매</button>
         </div>`;
           $(".row").append(card);
         });
       });
 
-      $("#six").click(function() {
-        var newproducts = products.filter(function(a) {
+      $("#six").click(function () {
+        var newproducts = products.filter(function (a) {
           return a.price <= 60000;
-        })
+        });
 
         $(".row").html("");
 
@@ -97,6 +99,7 @@
           <img src="https://via.placeholder.com/600" class="w-100">
           <h5>${newproducts[i].title}</h5>
           <p>가격 : ${newproducts[i].price}</p>
+          <button class="buy">구매</button>
         </div>`;
           $(".row").append(card);
         });
@@ -128,6 +131,7 @@
           <img src="https://via.placeholder.com/600" class="w-100">
           <h5>${products[i].title}</h5>
           <p>가격 : ${products[i].price}</p>
+          <button class="buy">구매</button>
         </div>`;
         $(".row").append(card);
       });
@@ -153,6 +157,7 @@
               <img src="https://via.placeholder.com/600" class="w-100">
               <h5>${data1[i].title}</h5>
               <p>가격 : ${data1[i].price}</p>
+          <button class="buy">구매</button>
             </div>`;
                 $(".row").append(card);
               });
@@ -166,6 +171,7 @@
               <img src="https://via.placeholder.com/600" class="w-100">
               <h5>${data2[i].title}</h5>
               <p>가격 : ${data2[i].price}</p>
+          <button class="buy">구매</button>
             </div>`;
                 $(".row").append(card);
               });
@@ -204,7 +210,7 @@
 
     </form> -->
     <!-- ajax가 새로고침없이 GET,POST 요청하는 기능 -->
-    <script>
+    <!-- <script>
       // $.get('https://codingapple1.github.io/hello.txt').done(function(data) { // ajax로 GET 요청하는 법
       //   console.log(data)
       // }).fail(function() { // ajax 실패시 특정 코드 실행하고 싶으면
@@ -223,9 +229,39 @@
       // .then(data => {
       //   console.log(data)
       // })
-      // .catch(error => {
+      // .catch(error => {  
       //   consooe.log(err)
       // })
+    </script> -->
+    <script>
+      // localStorange, sessionStorage는 이름 : 값 형태로 저장가능 용량은 5MB 문자/숫자만 저장가능
+      // localStorage는 사이트 재접속해도 유지 / sessionStorage는 사이트나가면 자동 삭제      // IndexedDB는 구조화된 대용량데이터 저장 시
+      // Cookies는 보통 로그인정보 저장
+      // Cache Storage는 html, css, js 파일 저장하는 곳
+
+      // localStorage.setItem('bomin', 'kang') // 저장하려면
+      // localStorage.getItem('bomin'); // 출력하려면
+      // localStorage.removeItem('bomin'); // 삭제하려면
+
+      // var arr = [1,2,3] // array/object -> JSON으로 바꾸면 저장가능
+      // var newArr = JSON.stringify(arr); // array.object -> JSON은 JSON.stringify()
+
+      // localStorage.setItem('num', newArr); // array, object 저장하려면
+      // var out = localStorage.getItem('num');
+      // JSON.parse(out); // JSON => array, object는 JOSN.parse()
+      // console.log(out);
+
+      $(".buy").click(function (e) {
+        var title = $(e.target).siblings("h5").text(); // 형제요소 가져올 수 있음
+
+        if(localStorage.getItem('cart') != null) {
+          var 꺼낸거 = JSON.parse(localStorage.cart);
+          꺼낸거.push(title);
+          localStorage.setItem('cart', JSON.stringify(꺼낸거));
+        } else {
+          localStorage.setItem("cart", JSON.stringify([title]));
+        }
+      });
     </script>
   </body>
   <script
