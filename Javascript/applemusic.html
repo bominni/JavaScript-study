@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <link href="css/applemusic.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="card-background">
+      <div class="card-box">
+        <img src="img/card1.png" />
+      </div>
+      <div class="card-box">
+        <img src="img/card2.png" />
+      </div>
+      <div class="card-box">
+        <img src="img/card3.png" />
+      </div>
+    </div>
+
+    <script>
+      $(window).scroll(function () {
+        var 높이 = $(window).scrollTop();
+        var y = (-1 / 500) * 높이 + 115 / 50;
+        var z = (-1 / 5000) * 높이 + 113 / 100;
+        $(".card-box").eq(0).css("opacity", y);
+        $(".card-box").eq(0).css('transform', `scale( ${z})`);
+      });
+    </script>
+  </body>
+</html>
