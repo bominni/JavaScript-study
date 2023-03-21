@@ -210,6 +210,54 @@
       </div>
     </div>
 
+    <script>
+      var 시작좌표 = 0;
+      var 누름 = false;
+      $(".slide-box").eq(0).on("mousedown", function (e) {
+        // console.log(e.clientX); // 현재 마우스위치 X좌표
+        시작좌표 = e.clientX;
+        누름 = true;
+      });
+      $(".slide-box").eq(0).on("mousemove", function (e) {
+        if (누름 == true) {
+          $(".slide-container").css("transform", `translateX(${e.clientX - 시작좌표}px)`);
+        }
+      });
+      $(".slide-box").eq(0).on('mouseup', function(e) {
+        누름 = false;
+        if(e.clientX - 시작좌표 < -100) {
+          $(".slide-container").css('transform', `translateX(-100vw)`);
+        } else {
+          $(".slide-container").css('transform', `translateX(0vw)`);
+        }
+        setTimeout(() => {
+          $(".slide-container").css('transform', 'none')
+        }, 500)
+      })
+
+      $(".slide-box").eq(0).on("touchstart", function (e) {
+        시작좌표 = e.touches[0].clientX;
+        누름 = true;
+      });
+      $(".slide-box").eq(0).on("touchmove", function (e) {
+        if (누름 == true) {
+          $(".slide-container").css("transform", `translateX(${e.touches[0].clientX - 시작좌표}px)`);
+        }
+      });
+      $(".slide-box").eq(0).on('touchend', function(e) {
+        누름 = false;
+        if(e.changedTouches[0].clientX - 시작좌표 < -100) {
+          $(".slide-container").css('transform', `translateX(-100vw)`);
+        } else {
+          $(".slide-container").css('transform', `translateX(0vw)`);
+        }
+        setTimeout(() => {
+          $(".slide-container").css('transform', 'none')
+        }, 500)
+      })
+
+    </script>
+
     <button class="slide-1">1</button>
     <button class="slide-2">2</button>
     <button class="slide-3">3</button>
@@ -338,11 +386,13 @@
       $("#close").on("click", function () {
         $(".black-bg").css("display", "none");
       });
-      document.querySelector('.black-bg').addEventListener('click', function(e) {
-        if (e.target == document.querySelector('.black-bg')) {
-          document.querySelector('.black-bg').classList.remove('show-modal')
-        }
-      })
+      document
+        .querySelector(".black-bg")
+        .addEventListener("click", function (e) {
+          if (e.target == document.querySelector(".black-bg")) {
+            document.querySelector(".black-bg").classList.remove("show-modal");
+          }
+        });
       // $('.black-bg').on('click', function(e) {
       //   // e.target; // 유저가 실제로 누른거
       //   // e.currentTarget; // 이벤트리스너 달린 곳
